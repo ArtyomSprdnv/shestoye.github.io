@@ -1,46 +1,38 @@
-<<html lang="ru"><head>
-    <link href="xxx.css" rel="stylesheet" type="text/css">
-<title>Калькулятор</title>
-
-<script>
-
-function click1() {
-let f1 = document.getElementsByName("field1");
-let f2 = document.getElementsByName("field2");
-let r = document.getElementById("result");
-r.innerHTML = f1[0].value * f2[0].value;
-if((f2[0].value<='0')||(f1[0].value<='0') ) {
-    r.innerHTML="undefined";
-    alert(" Ошибка, введены недопустимые значения.. ");
-}
-return false;
-}
-</script> 
-</head>
-<body>
-
-<form name="calcform">
-
-<table>
-
-<tbody><tr>
-<td>Цена товара:</td>
-<td>
-<input name="field1" type="text">
-</td>
-</tr>
-<tr>
-<td>Количество товара:</td>
-<td>
-<input name="field2" type="text">
-</td>
-</tr>
-<tr>
-<td>
-<button id="button1" onclick="return click1();">Стоимость</button>
-</td>
-<td class="a">
-<div id="result"> </div>
-</td>
-</tr>
-</tbody></table>
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задание 6.</title>
+    <style>
+      input 
+      {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <form>
+        Введите количество товара:
+        <input type="text" id="num" placeholder="Количество" /><br />
+        Выберите тип товара:
+        <select id="type">
+          <option value="1" selected>Вариант 1</option>
+          <option value="2">Вариант 2</option>
+          <option value="3">Вариант 3</option></select>
+          <br />
+        <div id="radios">
+          <input type="radio" name="option" value="10" />Опция 1
+          <input type="radio" name="option" value="15" />Опция 2 
+          <br />
+        </div>
+        <div id="checkbox">
+          <input type="checkbox" id="checkbox-check" value="100" /> Другой вариант
+        </div>
+      </form>
+      Итоговая стоимость: <input type="text" id="total" disabled />
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
